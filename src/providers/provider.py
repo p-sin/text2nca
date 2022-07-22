@@ -3,11 +3,11 @@ class Provider:
     Interface for the providers that turns a text string into an image to be processed.
     '''
 
-    def __init__(self, text):
-        self.text = text
+    def __init__(self):
+        pass
 
-    def get_image(self):
+    def get_image(self, prompt):
         '''
-        Returns the image that the provider generates.
+        Returns an image or a number of images based on a prompt
         '''
         raise NotImplementedError()
