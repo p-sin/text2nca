@@ -1,5 +1,4 @@
 from provider import Provider
-
 # credit: https://github.com/borisdayma/dalle-mini/blob/main/tools/inference/inference_pipeline.ipynb
 
 import random
