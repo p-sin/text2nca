@@ -3,7 +3,7 @@ https://www.robots.ox.ac.uk/~vgg/data/dtd/index.html
 https://www.pexels.com/search/texture/
 https://freestocktextures.com/texture/       (lots of paintings though)
 
-About this project:
+# About this project:
 
 Inspired by (and using the open source code for) self-organising systems by Mordvintsev et al[0], this projects aims to create Neural Cellular Automata(NCA) from text input provided by the user. It does so either by scraping web galleries for textures based on the text input or using dall-e mini. The found images are then fed to the NCA, which generates the pattern to display it. Created patterns will be saved for later access.
 
