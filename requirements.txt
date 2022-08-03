@@ -1,0 +1,7 @@
+numpy
+jax
+matplotlib
+tensorflow
+bs4
+requests
+dalle-mini
