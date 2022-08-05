@@ -83,7 +83,7 @@ class DallEMini(Provider):
         Generate an image based on a prompt
         '''
 
-        tokenized_prompt = replicate(self.processor(prompt))
+        tokenized_prompt = replicate(self.processor([prompt]))
 
         # number of predictions per prompt
         n_predictions = 8
