@@ -2,3 +2,4 @@ resources/
 **/__pycache__/
 **/.idea
 **/.ipynb_checkpoints
+**/text2nca.egg-info
