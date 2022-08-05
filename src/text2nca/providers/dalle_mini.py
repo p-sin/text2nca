@@ -97,7 +97,9 @@ class DallEMini(Provider):
         temperature = None
         cond_scale = 10.0
 
+
         # generate image
+        decoded_images = []
         images = []
         for i in trange(max(n_predictions // jax.device_count(), 1)):
             # get a new key
@@ -118,8 +120,14 @@ class DallEMini(Provider):
             decoded_images = p_decode(encoded_images, self.vqgan_params)
             decoded_images = decoded_images.clip(0.0, 1.0).reshape((-1, 256, 256, 3))
             for decoded_img in decoded_images:
-                # TODO only append to images in last step
                 img = Image.fromarray(np.asarray(decoded_img * 255, dtype=np.uint8))
                 images.append(img)
+                display(img)
+                print()
 
-        return images
+        final_images = []
+        for decoded_img in decoded_images:
+            img = Image.fromarray(np.asarray(decoded_img * 255, dtype=np.uint8))
+            final_images.append(img)
+
+        return final_images
