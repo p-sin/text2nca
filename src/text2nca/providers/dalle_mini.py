@@ -110,7 +110,7 @@ class DallEMini(Provider):
             #    condition_scale=cond_scale,
             #)
             encoded_images = self.model.generate(
-                    **tokenized_prompt, 
+                    tokenized_prompt, 
                     shard_prng_key(subkey),
                     self.params,
                     gen_top_k,
