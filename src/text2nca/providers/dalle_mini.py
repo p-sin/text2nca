@@ -56,7 +56,7 @@ class DallEMini(Provider):
 
     # compile and parallelize model function to use multiple devices
     # model inference
-    @partial(jax.pmap, axis_name="batch", static_broadcasted_argnums=(3, 4, 5, 6))
+    @partial(jax.pmap, axis_name="batch", static_broadcasted_argnums=(4, 5, 6, 7))
     def p_generate(
         self, tokenized_prompt, key, params, top_k, top_p, temperature, condition_scale
     ):
@@ -100,23 +100,14 @@ class DallEMini(Provider):
             # get a new key
             self.key, subkey = jax.random.split(self.key)
             # generate images
-            #encoded_images = self.p_generate(
-            #    tokenized_prompt=tokenized_prompt,
-            #    key=shard_prng_key(subkey),
-            #    params=self.params,
-            #    top_k=gen_top_k,
-            #    top_p=gen_top_p,
-            #    temperature=temperature,
-            #    condition_scale=cond_scale,
-            #)
-            encoded_images = self.model.generate(
-                    tokenized_prompt, 
-                    shard_prng_key(subkey),
-                    self.params,
-                    gen_top_k,
-                    gen_top_p,
-                    temperature,
-                    cond_scale,
+            encoded_images = self.p_generate(
+                tokenized_prompt=tokenized_prompt,
+                key=shard_prng_key(subkey),
+                params=self.params,
+                top_k=gen_top_k,
+                top_p=gen_top_p,
+                temperature=temperature,
+                condition_scale=cond_scale,
             )
             # remove BOS
             encoded_images = encoded_images.sequences[..., 1:]
