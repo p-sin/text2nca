@@ -1,5 +1,5 @@
 # Architecture
-https://www.robots.ox.ac.uk/~vgg/data/dtd/index.html
+
 https://www.pexels.com/search/texture/
 
 # About this project:
@@ -39,8 +39,15 @@ Content
            - else creates list with all contents fitting the prompt and filters for images
            - downloads images and crops out a square suitable for processing
            - returns list of images
+           
+       - dtextdataset.py
+           - accessed by provider
+           - lets user choose one of the categories of the Describable Textures Dataset using jupyter widgets
+           - uses webscraping on https://www.robots.ox.ac.uk/~vgg/data/dtd/view.html?categ= + chosen category for images
+           - downloads the first 10 images in the list
+           - returns list of images via interact function
          
-        - texture.py
+       - texture.py
             - returns image that provider generates
         
     - nca.py
@@ -51,6 +58,7 @@ Content
             
     Requirements
         See requirements.txt. 
+        If you don't have a webdriver you could download ChromeDriver at https://sites.google.com/chromium.org/driver/getting-started and put it in the same folder as the project
         Since quite a few libraries, as well as dalle-mini, are required, we recommend using Google collab instead of your local environment.
         We'll provide a Notebook for convenience.
         
