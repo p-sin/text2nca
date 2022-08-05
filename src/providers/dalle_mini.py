@@ -1,6 +1,8 @@
 from provider import Provider
 # credit: https://github.com/borisdayma/dalle-mini/blob/main/tools/inference/inference_pipeline.ipynb
 
+from PIL import Image
+
 import random
 from functools import partial
 
@@ -76,7 +78,7 @@ class DallEMini(Provider):
 
         
 
-    def get_image(self, prompt):
+    def get_image(self, prompt) -> list[Image.Image]:
         '''
         Generate an image based on a prompt
         '''
@@ -112,10 +114,9 @@ class DallEMini(Provider):
             # decode images
             decoded_images = self.p_decode(encoded_images, self.vqgan_params)
             decoded_images = decoded_images.clip(0.0, 1.0).reshape((-1, 256, 256, 3))
-            #for decoded_img in decoded_images:
-            #    img = Image.fromarray(np.asarray(decoded_img * 255, dtype=np.uint8))
-            #    images.append(img)
-            #    display(img)
-            #    print()
+            for decoded_img in decoded_images:
+                # TODO only append to images in last step
+                img = Image.fromarray(np.asarray(decoded_img * 255, dtype=np.uint8))
+                images.append(img)
 
         return images

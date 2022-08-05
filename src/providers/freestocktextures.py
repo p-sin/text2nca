@@ -14,7 +14,7 @@ class FreeStockTextures(Provider):
     def __init__(self):
         pass
 
-    def get_image(self, prompt):
+    def get_image(self, prompt) -> list[Image.Image]:
         '''
         Returns an image or a number of images based on a prompt
         '''
@@ -59,11 +59,7 @@ class FreeStockTextures(Provider):
 
             img = img.crop((left, top, right, bottom))
             downloaded_images.append(img)
-
-            img.show()
-
-
-
+            break
 
         return downloaded_images
 
@@ -73,6 +69,4 @@ if __name__ == '__main__':
     res = provider.get_image(prompt)
     #print(res)
     
-    from PIL import Image
-    img = Image.open(res[0])
-    img.show()
+    res[0].show()

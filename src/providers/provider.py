@@ -1,3 +1,5 @@
+from PIL import Image
+
 class Provider:
     '''
     Interface for the providers that turns a text string into an image to be processed.
@@ -6,8 +8,10 @@ class Provider:
     def __init__(self):
         pass
 
-    def get_image(self, prompt):
+    def get_image(self, prompt) -> list[Image.Image]:
         '''
-        Returns an image or a number of images based on a prompt
+        Returns a list of images based on a prompt
+
+        Return Type: PIL.Image.Image
         '''
         raise NotImplementedError()
