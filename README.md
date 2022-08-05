@@ -94,3 +94,6 @@ settings:
      
    - for NCA: choosing one of the provided images to train NCA with
     
+output:
+
+the NCAs derived from the input. They are nice to look at and the final parameters are saved so you have a gallery of your creations! The more it resembles the input, the better did training the model work. 
