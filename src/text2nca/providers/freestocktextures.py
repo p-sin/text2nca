@@ -59,7 +59,6 @@ class FreeStockTextures(Provider):
 
             img = img.crop((left, top, right, bottom))
             downloaded_images.append(img)
-            break
 
         return downloaded_images
 
