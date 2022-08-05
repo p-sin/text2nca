@@ -40,6 +40,7 @@ for the Provider:
        - returns list of images
            
    - dtextdataset.py
+       - *not a choice as of now as it doesn't work yet*
        - accessed by provider
        - lets user choose one of the categories of the Describable Textures Dataset using jupyter widgets
        - uses webscraping on https://www.robots.ox.ac.uk/~vgg/data/dtd/view.html?categ= + chosen category for images
@@ -59,27 +60,37 @@ for the NCA
        - using self_organising_systems for creating and training an NCA
        - input: name for npy-file and image for loss model
        - creates, saves and trains NCA
-        
+
+The Notebook
+
+Works best in Google Collab and Walks you through the steps necessary to create your own NCAs. Have fun!
             
             
 # Setup            
-            
+
+setup.py is provided
+
 Requirements:
     See requirements.txt.
     
 External Ressources:
     If you don't have a webdriver you could download ChromeDriver at https://sites.google.com/chromium.org/driver/getting-started and put it in the same folder as the project.  
     
-Since quite a few libraries, as well as dalle-mini, are required, we recommend using Google collab instead of your local environment.
+Since quite a few libraries, as well as dalle-mini, are required, we recommend using Google collab instead of your local environment(especially as a Windows User).
 We'll provide a Notebook for convenience.
         
 # Instructions on usage:
 
 appropriate input:
-    - for dalle-mini can be any text
-    - for webscraping
-        (a) single word (freestocktextures.py)
-        (b) choosing from provided categories (dtextdataset.py)
+   - for dalle-mini can be any text
+     
+   - for webscraping
+        - (a) single word (freestocktextures.py)
+ 
+        - *(b) choosing from provided categories (dtextdataset.py)(not available)*
             
 settings:  
-    - for provider: 
+   - for provider: choosing between webscraping and dalle-mini
+     
+   - for NCA: choosing one of the provided images to train NCA with
+    
