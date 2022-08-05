@@ -1,3 +1,5 @@
+This is a work in progress!
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-sin/text2nca/blob/master/notebooks/text2nca.ipynb)
 
 # About this project:
