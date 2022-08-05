@@ -42,7 +42,7 @@ class FreeStockTextures(Provider):
         downloaded_images = []
         for i in images:
             #assert 'src' in i
-            print(i['src'])
+            #print(i['src'])
             img_dl = urllib.request.urlopen(i['src'])
             img_file = io.BytesIO(img_dl.read())
             #downloaded_images.append(img_file)

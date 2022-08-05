@@ -96,9 +96,9 @@ class DallEMini(Provider):
 
         # generate image
         images = []
-        for i in max(n_predictions // jax.device_count(), 1):
+        for i in trange(max(n_predictions // jax.device_count(), 1)):
             # get a new key
-            key, subkey = jax.random.split(key)
+            self.key, subkey = jax.random.split(self.key)
             # generate images
             encoded_images = self.p_generate(
                 tokenized_prompt,
