@@ -16,7 +16,7 @@ from vqgan_jax.modeling_flax_vqgan import VQModel
 from transformers import CLIPProcessor, FlaxCLIPModel
 from flax.jax_utils import replicate
 from flax.training.common_utils import shard_prng_key
-
+from tqdm.notebook import trange
 
 DALLE_MODEL = "dalle-mini/dalle-mini/mini-1:v0"
 #DALLE_MODEL = "dalle-mini/dalle-mini/mega-1-fp16:latest" 
