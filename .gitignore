@@ -1,2 +1,4 @@
 resources/
 **/__pycache__/
+**/.idea
+**/.ipynb_checkpoints
