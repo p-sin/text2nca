@@ -32,11 +32,10 @@ class TextureNCA(NCA):
     def train(self, name, image):
         self.image = np.float32(image)/255.0
         self.name = name
+        imshow(self.image)
         imwrite('_target.png', self.image)
         self.loss_model = StyleModel('_target.png')
         self.trainer = TextureSynthTrainer(loss_model = self.loss_model)
-
-        imshow(self.image)
 
         try:
           for i in range(cfg.texture_ca.train_steps):
