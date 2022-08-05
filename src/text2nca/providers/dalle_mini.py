@@ -18,8 +18,8 @@ from flax.jax_utils import replicate
 from flax.training.common_utils import shard_prng_key
 
 
-# DALLE_MODEL = "dalle-mini/dalle-mini/mini-1:v0"
-DALLE_MODEL = "dalle-mini/dalle-mini/mega-1-fp16:latest" 
+DALLE_MODEL = "dalle-mini/dalle-mini/mini-1:v0"
+#DALLE_MODEL = "dalle-mini/dalle-mini/mega-1-fp16:latest" 
 DALLE_COMMIT_ID = None
 
 VQGAN_REPO = "dalle-mini/vqgan_imagenet_f16_16384"
