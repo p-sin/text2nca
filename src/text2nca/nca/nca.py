@@ -3,11 +3,11 @@ class NCA:
     Interface for NCAs
     '''
 
-    def __init__(self, name, image):
+    def __init__(self):
         pass
 
 
-    def train_step(self):
+    def train_step(self, name, prompt):
         '''
         Returns an NCA 
 

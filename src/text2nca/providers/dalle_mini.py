@@ -101,13 +101,13 @@ class DallEMini(Provider):
             self.key, subkey = jax.random.split(self.key)
             # generate images
             encoded_images = self.p_generate(
-                tokenized_prompt,
-                shard_prng_key(subkey),
-                self.params,
-                gen_top_k,
-                gen_top_p,
-                temperature,
-                cond_scale,
+                tokenized_prompt=tokenized_prompt,
+                key=shard_prng_key(subkey),
+                params=self.params,
+                top_k=gen_top_k,
+                top_p=gen_top_p,
+                temperature=temperature,
+                condition_scale=cond_scale,
             )
             # remove BOS
             encoded_images = encoded_images.sequences[..., 1:]

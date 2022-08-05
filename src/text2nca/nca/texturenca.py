@@ -40,14 +40,17 @@ def imshow(a, fmt='jpeg'):
   display(Image(data=imencode(a, fmt)))
 
 class TextureNCA(NCA):
-    def __init__(self, name, image):
+    def __init__(self):
+        self.trainer = TextureSynthTrainer(loss_model = self.loss_model)
+
+    def train(self, name, image):
         self.image = np.float32(image)/255.0
+        self.name = name
         imwrite('_target.png', self.image)
         self.loss_model = StyleModel('_target.png')
-        self.trainer = TextureSynthTrainer(loss_model = self.loss_model)
-        self.name = name
 
-    def train(self):
+        imshow(self.image)
+
         try:
           for i in range(cfg.texture_ca.train_steps):
             # r is  Bunch(batch=batch, x0=x0, loss=loss, step_num=step_num)
