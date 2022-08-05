@@ -9,6 +9,7 @@ from PIL import Image
 
 class FreeStockTextures(Provider):
     '''
+    Scrapes freestocktextures.com for images fitting the prompt and returns a list
     '''
 
     def __init__(self):

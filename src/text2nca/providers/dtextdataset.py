@@ -16,12 +16,13 @@ from ipywidgets import interact, interactive, fixed, interact_manual
 
 class DTextDataset(Provider):
     '''
+    Scrapes DTD for images within the category and returns a list
     '''
 
     def __init__(self):
         pass
     
-    def f(texture):
+    def get_image(self, texture):
         #didn't get requests to work for the hidden divs, so I used selenium instead
         driver = webdriver.Chrome()
         driver.get("https://www.robots.ox.ac.uk/~vgg/data/dtd/view.html?categ=" + texture)
@@ -46,13 +47,7 @@ class DTextDataset(Provider):
             img.show()
 
         return downloaded_images
-    
-    def get_image(self, prompt):
         
-        categ = ['ALL', 'banded', 'blotchy', 'braided', 'bubbly', 'bumpy', 'chequered', 'cowebbed', 'cracked', 'crosshatched', 'crystalline', 'dotted', 'fibrous', 'flecked', 'freckled', 'frilly', 'gauzy', 'grid', 'grooved', 'honeycombed', 'interlaced', 'knitted', 'lacelike', 'lined', 'marbled', 'matted', 'meshed', 'paisley', 'perforated', 'pitted', 'pleated', 'polka-dotted', 'porous', 'potholed', 'scaly', 'smeared', 'spiralled',  'sprinkled', 'stained', 'stratified', 'striped', 'studded', 'swirly', 'veined', 'waffled', 'woven', 'wrinkled', 'zigzagged']
-
-        #I hope this actually works in combination with the provider. right now it should output downloaded_images via the interact
-        interact(f, texture = categ)
         
 if __name__ == '__main__':
     prompt = input('Enter a prompt: ')
