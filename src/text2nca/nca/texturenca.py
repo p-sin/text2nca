@@ -3,14 +3,24 @@ from text2nca.nca.nca import NCA
 import os
 import numpy as np
 import matplotlib.pylab as pl
+from concurrent.futures import ThreadPoolExecutor
+from ipywidgets import Layout
+from string import Template
 
-from IPython.display import Image, clear_output
+import tensorflow as tf
 
-from self_organising_systems.texture_ca.losses import StyleModel
+from IPython.display import Image, HTML, clear_output, Javascript
+from tqdm import tqdm_notebook
+
+from ml_collections import ConfigDict
+
+from self_organising_systems.texture_ca.losses import StyleModel, Inception
 from self_organising_systems.texture_ca.texture_synth import TextureSynthTrainer
+from self_organising_systems.texture_ca import ca
 from self_organising_systems.texture_ca.ca import to_rgb
 from self_organising_systems.texture_ca.config import cfg
-from self_organising_systems.shared.util import imencode, imwrite
+from self_organising_systems.shared.util import imread, imencode, imwrite, zoom, tile2d
+from self_organising_systems.texture_ca.export_models import export_models_to_js 
 
 def imshow(a, fmt='jpeg'):
   display(Image(data=imencode(a, fmt)))
