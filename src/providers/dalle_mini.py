@@ -13,7 +13,7 @@ import jax.numpy as jnp
 
 from dalle_mini import DalleBart, DalleBartProcessor
 from vqgan_jax.modeling_flax_vqgan import VQModel
-from transformers imort CLIPProcessor, FlaxCLIPModel
+from transformers import CLIPProcessor, FlaxCLIPModel
 from flax.jax_utils import replicate
 from flax.training.common_utils import shard_prng_key
 
