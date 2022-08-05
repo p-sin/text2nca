@@ -1,4 +1,4 @@
-from nca import NCA
+from text2nca.nca.nca import NCA
 
 import os
 import io
@@ -45,4 +45,5 @@ class TextureNCA(NCA):
         self.trainer = TextureSynthTrainer(loss_model = self.loss_model)
 
     def train_step(self):
-
+        r = self.trainer.train_step()
+        

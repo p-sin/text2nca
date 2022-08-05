@@ -1,4 +1,4 @@
-from provider import Provider
+from text2nca.providers.provider import Provider
 
 import requests
 import bs4

@@ -1,4 +1,4 @@
-from provider import Provider
+from text2nca.providers.provider import Provider
 # credit: https://github.com/borisdayma/dalle-mini/blob/main/tools/inference/inference_pipeline.ipynb
 
 from PIL import Image
