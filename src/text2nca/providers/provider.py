@@ -8,7 +8,7 @@ class Provider:
     def __init__(self):
         pass
 
-    def get_image(self, prompt) -> list[Image.Image]:
+    def get_image(self, prompt):
         '''
         Returns a list of images based on a prompt
 

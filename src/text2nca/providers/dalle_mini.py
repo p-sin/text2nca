@@ -78,7 +78,7 @@ class DallEMini(Provider):
 
         
 
-    def get_image(self, prompt) -> list[Image.Image]:
+    def get_image(self, prompt):
         '''
         Generate an image based on a prompt
         '''

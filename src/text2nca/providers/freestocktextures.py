@@ -14,7 +14,7 @@ class FreeStockTextures(Provider):
     def __init__(self):
         pass
 
-    def get_image(self, prompt) -> list[Image.Image]:
+    def get_image(self, prompt):
         '''
         Returns an image or a number of images based on a prompt
         '''
