@@ -5,3 +5,5 @@ tensorflow
 bs4
 requests
 dalle-mini
+selenium
+ipywidgets
