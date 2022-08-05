@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/p-sin/text2nca/blob/master/notebooks/text2nca.ipynb)
+
 # About this project:
 
 Inspired by (and using the open source code for) self-organising systems by Mordvintsev et al[https://distill.pub/selforg/2021/textures/], this projects aims to create Neural Cellular Automata(NCA) from text input provided by the user. It does so either by scraping web galleries for textures based on the text input or using dall-e mini. The found images are then fed to the NCA, which generates the pattern to display it. Created patterns will be saved for later access.
